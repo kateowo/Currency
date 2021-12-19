@@ -7,16 +7,16 @@ execute if entity @s[nbt={Inventory:[{id:"minecraft:copper_ingot"}]}] run scoreb
 
 # Selling
 # Divide by 100, multiply by 99
-execute if score @s temp matches 1.. run scoreboard players operation weight_copper global /= 100 internal
 execute if score @s temp matches 1.. run scoreboard players operation weight_copper global *= 99 internal
+execute if score @s temp matches 1.. run scoreboard players operation weight_copper global /= 100 internal
 execute if score @s temp matches 1.. unless score weight_copper global matches 1.. run scoreboard players set weight_copper global 1 
 
 # Operations
 execute if score @s temp matches 1.. run clear @s copper_ingot 1
 execute if score @s temp matches 1.. run scoreboard players operation @s currency += weight_copper global
 
-# Error
-execute if score @s temp matches 0 run tellraw @s {"text":"You do not have a Copper Ingot, operation denied.","color":"red"}
+# Success
+execute if score @s temp matches 1.. run tellraw @s [{"text":"Sold ","color":"green"},{"text":"Copper Ingot","color":"yellow","bold":true},{"text":" for ","color":"green"},{"text":"$","color":"gold","bold":true,"italic":false},{"score":{"name":"weight_copper","objective":"global"},"color":"yellow","bold":true}]
 
 # Temp
 scoreboard players set @s temp 0

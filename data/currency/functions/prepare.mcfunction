@@ -12,6 +12,7 @@ scoreboard objectives add pay trigger
 scoreboard objectives add confirm trigger
 scoreboard objectives add withdraw trigger
 scoreboard objectives add deposit trigger
+scoreboard objectives add sell trigger
 # Withdraw
 scoreboard objectives add temp_withdraw dummy
 scoreboard objectives add w_1000 dummy

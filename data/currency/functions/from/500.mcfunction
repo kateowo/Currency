@@ -7,7 +7,7 @@ execute if entity @s[nbt={Inventory:[{id:"minecraft:paper",tag:{currency:500}}]}
 
 # Operations
 execute if score @s temp matches 1.. run clear @s paper{display:{Name:'[{"text":"$","color":"gold","bold":true,"italic":false},{"text":"500","color":"yellow","bold":true}]',Lore:['{"text":"Currency Withdrawal","color":"gray","italic":false}']},currency:500,currency_note:true,Enchantments:[{}]} 1
-execute if score @s temp matches 1.. run scoreboard players operation @s currency += 100 internal
+execute if score @s temp matches 1.. run scoreboard players operation @s currency += 500 internal
 
 # Success
 execute if score @s temp matches 1.. run tellraw @s [{"text":"Deposited ","color":"green"},{"text":"$","color":"gold","bold":true,"italic":false},{"text":"500","color":"yellow","bold":true}]
