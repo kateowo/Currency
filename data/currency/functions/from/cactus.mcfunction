@@ -6,10 +6,12 @@ scoreboard players set @s temp 0
 execute if entity @s[nbt={Inventory:[{id:"minecraft:cactus"}]}] run scoreboard players set @s temp 1
 
 # Selling
+execute if score @s temp matches 1.. run scoreboard players add sold_cactus temp 1
 # Divide by 100, multiply by 99
-execute if score @s temp matches 1.. run scoreboard players operation weight_cactus global *= 99 internal
-execute if score @s temp matches 1.. run scoreboard players operation weight_cactus global /= 100 internal
-execute if score @s temp matches 1.. unless score weight_cactus global matches 1.. run scoreboard players set weight_cactus global 1 
+execute if score sold_cactus temp matches 3.. run scoreboard players operation weight_cactus global *= 99 internal
+execute if score sold_cactus temp matches 3.. run scoreboard players operation weight_cactus global /= 100 internal
+execute if score sold_cactus temp matches 3.. unless score weight_cactus global matches 1.. run scoreboard players set weight_cactus global 1 
+execute if score sold_cactus temp matches 3.. run scoreboard players reset sold_cactus temp
 
 # Operations
 execute if score @s temp matches 1.. run clear @s cactus 1

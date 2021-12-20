@@ -29,6 +29,7 @@ scoreboard players set weight_sugarcane global 15
 scoreboard players set weight_wheat global 15
 scoreboard players set weight_melon global 15
 scoreboard players set weight_cobblestone global 1
+scoreboard players set weight_oaklog global 1
 
 # Withdraw notes (internal)
 scoreboard players set 1 internal 1

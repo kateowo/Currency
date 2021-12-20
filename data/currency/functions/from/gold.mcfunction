@@ -6,10 +6,12 @@ scoreboard players set @s temp 0
 execute if entity @s[nbt={Inventory:[{id:"minecraft:gold_ingot"}]}] run scoreboard players set @s temp 1
 
 # Selling
+execute if score @s temp matches 1.. run scoreboard players add sold_gold temp 1
 # Divide by 100, multiply by 99
-execute if score @s temp matches 1.. run scoreboard players operation weight_gold global *= 99 internal
-execute if score @s temp matches 1.. run scoreboard players operation weight_gold global /= 100 internal
-execute if score @s temp matches 1.. unless score weight_gold global matches 1.. run scoreboard players set weight_gold global 1 
+execute if score sold_gold temp matches 3.. run scoreboard players operation weight_gold global *= 99 internal
+execute if score sold_gold temp matches 3.. run scoreboard players operation weight_gold global /= 100 internal
+execute if score sold_gold temp matches 3.. unless score weight_gold global matches 1.. run scoreboard players set weight_gold global 1 
+execute if score sold_gold temp matches 3.. run scoreboard players reset sold_gold temp
 
 # Operations
 execute if score @s temp matches 1.. run clear @s gold_ingot 1

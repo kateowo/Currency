@@ -6,14 +6,16 @@ scoreboard players set @s temp 0
 execute if score @s currency >= weight_wheat global run scoreboard players set @s temp 1
 
 # Buying
+execute if score @s temp matches 1.. run scoreboard players add bought_wheat temp 1
 # Just add 1 if the value is under 100
-execute if score @s temp matches 1.. unless score weight_wheat global >= 100 internal run scoreboard players operation weight_wheat global += 1 internal
+execute if score bought_wheat temp matches 3.. unless score weight_wheat global >= 100 internal run scoreboard players operation weight_wheat global += 1 internal
 # Divide by 100, multiply by 101
-execute if score @s temp matches 1.. if score weight_wheat global >= 100 internal run scoreboard players set @s temp 2
-execute if score @s temp matches 1.. if score @s temp matches 2.. run scoreboard players operation weight_wheat global *= 101 internal
-execute if score @s temp matches 1.. if score @s temp matches 2.. run scoreboard players operation weight_wheat global /= 100 internal
+execute if score bought_wheat temp matches 3.. if score weight_wheat global >= 100 internal run scoreboard players set @s temp 2
+execute if score bought_wheat temp matches 3.. if score @s temp matches 2.. run scoreboard players operation weight_wheat global *= 101 internal
+execute if score bought_wheat temp matches 3.. if score @s temp matches 2.. run scoreboard players operation weight_wheat global /= 100 internal
 # If the value reaches 0, set to 1
-execute if score @s temp matches 1.. unless score weight_wheat global matches 1.. run scoreboard players set weight_wheat global 1 
+execute if score bought_wheat temp matches 3.. unless score weight_wheat global matches 1.. run scoreboard players set weight_wheat global 1 
+execute if score bought_wheat temp matches 3.. run scoreboard players reset bought_wheat temp
 
 # Operations
 execute if score @s temp matches 1.. run scoreboard players operation @s currency -= weight_wheat global

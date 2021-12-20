@@ -6,10 +6,12 @@ scoreboard players set @s temp 0
 execute if entity @s[nbt={Inventory:[{id:"minecraft:potato"}]}] run scoreboard players set @s temp 1
 
 # Selling
+execute if score @s temp matches 1.. run scoreboard players add sold_potato temp 1
 # Divide by 100, multiply by 99
-execute if score @s temp matches 1.. run scoreboard players operation weight_potato global *= 99 internal
-execute if score @s temp matches 1.. run scoreboard players operation weight_potato global /= 100 internal
-execute if score @s temp matches 1.. unless score weight_potato global matches 1.. run scoreboard players set weight_potato global 1 
+execute if score sold_potato temp matches 3.. run scoreboard players operation weight_potato global *= 99 internal
+execute if score sold_potato temp matches 3.. run scoreboard players operation weight_potato global /= 100 internal
+execute if score sold_potato temp matches 3.. unless score weight_potato global matches 1.. run scoreboard players set weight_potato global 1 
+execute if score sold_potato temp matches 3.. run scoreboard players reset sold_potato temp
 
 # Operations
 execute if score @s temp matches 1.. run clear @s potato 1
