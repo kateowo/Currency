@@ -32,10 +32,10 @@ execute as @a if score @s sell matches 1.. unless score disabled global matches 
 execute as @a if score @s sell matches 2.. unless score disabled global matches 1.. run function currency:pay/sell_items
 
 # Withdraw
-execute as @a if score @s w_1000 matches 1.. run function currency:give/1000
-execute as @a if score @s w_500 matches 1.. run function currency:give/500
-execute as @a if score @s w_100 matches 1.. run function currency:give/100
-execute as @a if score @s w_50 matches 1.. run function currency:give/50
-execute as @a if score @s w_10 matches 1.. run function currency:give/10
-execute as @a if score @s w_5 matches 1.. run function currency:give/5
-execute as @a if score @s w_1 matches 1.. run function currency:give/1
+execute as @a if score @s withdraw.1000 matches 1.. run function currency:give/1000
+execute as @a if score @s withdraw.500 matches 1.. run function currency:give/500
+execute as @a if score @s withdraw.100 matches 1.. run function currency:give/100
+execute as @a if score @s withdraw.50 matches 1.. run function currency:give/50
+execute as @a if score @s withdraw.10 matches 1.. run function currency:give/10
+execute as @a if score @s withdraw.5 matches 1.. run function currency:give/5
+execute as @a if score @s withdraw.1 matches 1.. run function currency:give/1

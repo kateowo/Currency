@@ -1,35 +1,35 @@
-# Currency default options
+# currency defaults
+## not reset on /reload
 
 
-# Display $0 on actionbar
+# display currency on actionbar
 scoreboard players set display global 1
 
-# Conversion rates
-scoreboard players set weight_netherite global 4000
-scoreboard players set weight_diamond global 2500
-scoreboard players set weight_gold global 200
-scoreboard players set weight_quartz global 150
-scoreboard players set weight_beetroot global 100
-scoreboard players set weight_iron global 100
-scoreboard players set weight_pumpkin global 100
-scoreboard players set weight_melonblock global 120
-scoreboard players set weight_melon global 100
-scoreboard players set weight_cocoabeans global 75
-scoreboard players set weight_potato global 50
-scoreboard players set weight_carrot global 50
-scoreboard players set weight_copper global 50
-scoreboard players set weight_cactus global 50
-scoreboard players set weight_redmushroom global 50
-scoreboard players set weight_brownmushroom global 50
-scoreboard players set weight_coal global 25
-scoreboard players set weight_netherwarts global 25
-scoreboard players set weight_redstone global 20
-scoreboard players set weight_lapis global 20
-scoreboard players set weight_sugarcane global 15
-scoreboard players set weight_wheat global 15
-scoreboard players set weight_melon global 15
-scoreboard players set weight_cobblestone global 1
-scoreboard players set weight_oaklog global 1
+# default stocks
+scoreboard players set netherite_ingot stocks 4000
+scoreboard players set diamond stocks 2500
+scoreboard players set gold_ingot stocks 200
+scoreboard players set quartz stocks 150
+scoreboard players set beetroot stocks 100
+scoreboard players set iron_ingot stocks 100
+scoreboard players set pumpkin stocks 100
+scoreboard players set melon_block stocks 120
+scoreboard players set melon stocks 100
+scoreboard players set cocoa_beans stocks 75
+scoreboard players set potato stocks 50
+scoreboard players set carrot stocks 50
+scoreboard players set copper_ingot stocks 50
+scoreboard players set cactus stocks 50
+scoreboard players set red_mushroom stocks 50
+scoreboard players set brown_mushroom stocks 50
+scoreboard players set coal stocks 25
+scoreboard players set nether_wart stocks 25
+scoreboard players set redstone stocks 20
+scoreboard players set lapis_lazuli stocks 20
+scoreboard players set sugar_cane stocks 15
+scoreboard players set wheat stocks 15
+scoreboard players set cobblestone stocks 1
+scoreboard players set oak_log stocks 1
 
 # Withdraw notes (internal)
 scoreboard players set 1 internal 1
