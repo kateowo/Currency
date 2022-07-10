@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://plexion.dev/css/reset.css">
+    <link rel="stylesheet" href="https://plexion.dev/css/style.css">
+
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Skyplex rates generate</title>
+</head>
+<body class="dark">
+    <section class="download-steps header-bar" style="top: initial; height: 86px;">
+        <span class="logo"><h5>Rates generator</h5></span>
+    </section>
+    <section style="padding: 15px var(--padding-min);">
+        <br><label class="overl">currency:defaults</label>
+        <div id="currency:defaults"></div>
+    </section>
+</body>
+<script>
+    const rates = {
+        'netherite_ingot': 4000,
+        'diamond': 2500,
+        'gold_ingot': 200,
+        'quartz': 150,
+        'beetroot': 100,
+        'iron_ingot': 100,
+        'pumpkin': 100,
+        'melon_block': 120,
+        'melon': 100,
+        'cocoa_beans': 75,
+        'potato': 50,
+        'carrot': 50,
+        'copper_ingot': 50,
+        'cactus': 50,
+        'red_mushroom': 50,
+        'brown_mushroom': 50,
+        'coal': 25,
+        'nether_wart': 25,
+        'redstone': 20,
+        'lapis_lazuli': 20,
+        'sugar_cane': 15,
+        'wheat': 15,
+        'cobblestone': 1,
+        'oak_log': 1
+    }
+    const exempt_sell = ['cobblestone','oak_log'];
+
+    // run through data
+    let text_defaults = ''; // currency:defaults
+
+    for (let i in rates) {
+        text_defaults = `${text_defaults}scoreboard players set ${i} stocks ${rates[i]}<br>`;
+    }
+
+    document.getElementById('currency:defaults').innerHTML = text_defaults;
+</script>
